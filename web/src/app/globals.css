@@ -2,32 +2,112 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+    height: 100vh;
+    display: flex;
+    align-items: center;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.input-container input:focus+button {
+    @apply border-blue-400;
 }
+
+#todo-list {
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+#todo-list::-webkit-scrollbar {
+    display: none;
+}
+
+#todo-list li:first-child {
+    /* background-color: red; */
+}
+
+#todo-list li:last-child {
+    border-bottom: none;
+    /* background-color: red; */
+}
+
+#todo-list .close-icon {
+    @apply bg-slate-500;
+
+    width: 35px;
+    height: 20px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+    z-index: 1000;
+    cursor: pointer;
+}
+
+#todo-list .close-icon:hover {
+    @apply bg-slate-600;
+}
+
+#todo-list .close-icon svg {
+    @apply text-white;
+}
+
+/* #todoList .list-group-item {
+    background-color: red;
+}
+
+#todoList .list-group-item .badge {
+    width: 25px;
+    height: 25px;
+
+    opacity: 1;
+    z-index: 1000;
+    cursor: pointer;
+    max-height: 20px;
+}
+
+#todoList .list-group-item:hover .badge {
+    opacity: 1 !important;
+}
+
+#todoList .list-group-item input {
+    width: 10%;
+    max-width: 1rem;
+}
+
+#todoList .list-group-item label {
+    width: 90%;
+    user-select: none;
+    cursor: pointer !important;
+}
+
+#todoList .list-group-item:hover {
+    background-color: var(--bs-secondary-bg-subtle);
+}
+
+#todoList .list-group-item.task-complete {
+    background-color: var(--bs-secondary-bg-subtle);
+    border: 1px solid #a1a1a1;
+}
+
+#todoList .list-group-item.task-complete label {
+    cursor: pointer !important;
+    text-decoration: line-through;
+}
+
+#todoList .list-group-item.task-complete .badge {
+    opacity: 1 !important;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+#todoList .list-group-item.task-complete .badge:hover {
+    background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+}
+
+@media (min-width: 992px) {
+    #todoList .list-group-item .badge {
+        opacity: 0;
+    }
+} */
