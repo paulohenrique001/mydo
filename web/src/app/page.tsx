@@ -5,7 +5,8 @@ import EmptyData from './components/EmptyData';
 import { Task } from './interfaces/Task';
 import { v4 as uuidv4 } from 'uuid';
 
-import { getProjectVersion } from './utils/ApplicationUtils';
+import { getProjectVersion, playSong } from './utils/ApplicationUtils';
+import { SongEnum } from './interfaces/SongEnum';
 
 const TaskList = React.lazy(() => import('./components/TaskList'));
 
@@ -39,6 +40,7 @@ const Application = () => {
             setTask('');
             setListTaks(updatedTasks);
             localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+            playSong(SongEnum.UI_ADD);
         } else {
             alert("Descrição da tarefa deve conter 3 caracteres ou mais!");
         }
@@ -50,22 +52,34 @@ const Application = () => {
         }
     };
 
-    const toggleTask = (id: string) => {
-        const updatedTasks = listTaks.map(task =>
-            task.id === id ? { ...task, checked: !task.checked } : task
+    const toggleTask = (task: Task) => {
+        const updatedTasks = listTaks.map(t =>
+            t.id === task.id ? { ...t, checked: !t.checked } : t
         );
+
         setListTaks(updatedTasks);
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+        task.checked ? playSong(SongEnum.UI_UNCHECKED) : playSong(SongEnum.UI_CHECKED);
     };
 
     const removeTask = (id: string) => {
         const updatedTasks = listTaks.filter(task => task.id !== id);
+
+        checkRemoveTaskSong();
         setListTaks(updatedTasks);
         localStorage.setItem('tasks', JSON.stringify(updatedTasks));
     };
 
+    function checkRemoveTaskSong() {
+        if ((listTaks.length - 1) > 0) {
+            playSong(SongEnum.UI_REMOVE);
+        } else {
+            playSong(SongEnum.TASK_EMPTY);
+        }
+    }
+
     return (
-        <main className='max-w-lg mx-auto p-4'>
+        <main className='max-w-lg mx-auto p-4 select-none'>
             <header className="flex flex-col items-center justify-center text-center mb-4">
                 <h1 className="text-6xl font-bold mb-0">MY<span className="text-blue-500">DO</span></h1>
                 <p className="text-xl font-light mb-5">Lista de tarefas utilizando <span className="text-blue-900 font-bold">Next</span>, <span className="text-blue-900 font-bold">TypeScript</span> & <span className="text-blue-900 font-bold">Tailwind CSS</span> 😎📋</p>
