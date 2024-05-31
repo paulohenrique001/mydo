@@ -14,20 +14,6 @@ pnpm dev
 bun dev
 ```
 
-// setTasks(["Finalizar MYDO 🗿🍷", "Task #01", "Task #02"]);
-
-// <div className="min-h-screen bg-gray-100 flex flex-col items-center p-4">
-//     <div className='text-center mb-4'>
-//         <h1 className="text-3xl font-bold mb-4">MYDO</h1>
-//         <h2>Lista de tarefas utilizando HTML, CSS, JavaScript & Bootstrap 5 😎📋</h2>
-//     </div>
-
-//     <Suspense fallback={<LoadingSpinner />}>
-//         {!loading && <TodoList />}
-//     </Suspense>
-//     {loading && <LoadingSpinner />}
-// </div>
-
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.

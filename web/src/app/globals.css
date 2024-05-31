@@ -21,13 +21,8 @@ body {
     display: none;
 }
 
-#todo-list li:first-child {
-    /* background-color: red; */
-}
-
 #todo-list li:last-child {
     border-bottom: none;
-    /* background-color: red; */
 }
 
 #todo-list .close-icon {
