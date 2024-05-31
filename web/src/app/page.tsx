@@ -23,7 +23,7 @@ const Application = () => {
             }
 
             setLoading(false);
-        }, 1000);
+        }, 500);
     }, []);
 
     const addTask = () => {
@@ -35,12 +35,18 @@ const Application = () => {
             };
 
             const updatedTasks = [...listTaks, newTask];
-            
+
             setTask('');
             setListTaks(updatedTasks);
             localStorage.setItem('tasks', JSON.stringify(updatedTasks));
         } else {
             alert("Descrição da tarefa deve conter 3 caracteres ou mais!");
+        }
+    };
+
+    const handleKeyPressInput = (event: KeyboardEvent) => {
+        if (event.key === "Enter" || event.keyCode === 13) {
+            addTask();
         }
     };
 
@@ -64,7 +70,7 @@ const Application = () => {
                 <h1 className="text-6xl font-bold mb-0">MY<span className="text-blue-500">DO</span></h1>
                 <p className="text-xl font-light mb-5">Lista de tarefas utilizando <span className="text-blue-900 font-bold">Next</span>, <span className="text-blue-900 font-bold">TypeScript</span> & <span className="text-blue-900 font-bold">Tailwind CSS</span> 😎📋</p>
                 <div className="input-container flex w-full">
-                    <input value={task} onChange={(e) => setTask(e.target.value)} placeholder="📎 Novo Item..." className="block w-full rounded-lg rounded-r-none p-4 ring-2 ring-inset ring-slate-200 focus:ring-blue-400 outline-none" />
+                    <input value={task} onChange={(e) => setTask(e.target.value)} onKeyDown={handleKeyPressInput} placeholder="📎 Novo Item..." className="block w-full rounded-lg rounded-r-none p-4 ring-2 ring-inset ring-slate-200 focus:ring-blue-400 outline-none" />
                     <button onClick={addTask} className="button w-14 rounded-lg rounded-l-none border-l-0 border-2 ring-slate-200 bg-slate-100 hover:bg-slate-200">+</button>
                 </div>
             </header>

@@ -17,6 +17,26 @@ body {
     scrollbar-width: none;
 }
 
+#todo-list li div {
+    margin-right: 35px
+}
+
+#todo-list .task-checked {
+    @apply bg-slate-100;
+}
+
+/* #todo-list li:hover .pencil-icon {
+    display: flex !important;
+} */
+
+#todo-list .task-checked .close-icon {
+    display: flex !important;
+}
+
+#todo-list li:hover .close-icon {
+    display: flex !important;
+}
+
 #todo-list::-webkit-scrollbar {
     display: none;
 }
@@ -25,9 +45,7 @@ body {
     border-bottom: none;
 }
 
-#todo-list .close-icon {
-    @apply bg-slate-500;
-
+#todo-list .mdi-icon {
     width: 35px;
     height: 20px;
     border-radius: 5px;
@@ -36,18 +54,36 @@ body {
     align-items: center;
     justify-content: center;
 
-    opacity: 1;
     z-index: 1000;
     cursor: pointer;
+}
+
+#todo-list .mdi-icon svg {
+    @apply text-white;
+}
+
+/* #todo-list .pencil-icon {
+    @apply bg-yellow-500;
+}
+
+#todo-list .pencil-icon:hover {
+    @apply bg-yellow-400;
+} */
+
+#todo-list .close-icon {
+    @apply bg-slate-500;
 }
 
 #todo-list .close-icon:hover {
     @apply bg-slate-600;
 }
 
-#todo-list .close-icon svg {
-    @apply text-white;
-}
+
+
+
+
+
+
 
 /* #todoList .list-group-item {
     background-color: red;
@@ -99,10 +135,10 @@ body {
 
 #todoList .list-group-item.task-complete .badge:hover {
     background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
-}
+} */
 
 @media (min-width: 992px) {
-    #todoList .list-group-item .badge {
-        opacity: 0;
+    #todo-list li .close-icon {
+        display: none;
     }
-} */
+}

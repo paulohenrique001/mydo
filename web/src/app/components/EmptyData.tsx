@@ -3,7 +3,7 @@ import Image from "next/image";
 const EmptyData = () => {
     return (
         <div className="h-full flex justify-center items-center">
-            <div className="w-2/3">
+            <div className="w-1/2">
                 <Image
                     src="/undraw_no_data.png"
                     alt="Duas pranchetas vazias lado a lado"
