@@ -1,5 +1,5 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { KeyboardEvent, useEffect, useState } from 'react';
 import LoadingSpinner from './components/LoadingSpinner';
 import EmptyData from './components/EmptyData';
 import { Task } from './interfaces/Task';
