@@ -79,7 +79,7 @@ const Application = () => {
     }
 
     return (
-        <main className='max-w-lg mx-auto p-4 select-none'>
+        <main className='max-w-lg mx-auto p-3 select-none'>
             <header className="flex flex-col items-center justify-center text-center mb-4">
                 <h1 className="text-6xl font-bold mb-0">MY<span className="text-blue-500">DO</span></h1>
                 <p className="text-xl font-light mb-5">Lista de tarefas utilizando <span className="text-blue-900 font-bold">Next</span>, <span className="text-blue-900 font-bold">TypeScript</span> & <span className="text-blue-900 font-bold">Tailwind CSS</span> 😎📋</p>
