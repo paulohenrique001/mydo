@@ -94,8 +94,8 @@ const Application = () => {
             </section>
 
             <footer className="text-center">
-                <p className="font-mono mb-0">Desenvolvido por <a href="https://www.linkedin.com/in/paulohenrique001" target="_blank" className="no-underline font-bold">Paulo Henrique</a></p>
-                <p className="font-mono mb-0">Atividades de Extensão <a href="https://www.cruzeirodosulvirtual.com.br" target="_blank" className="no-underline font-bold">Cruzeiro do Sul</a></p>
+                <p className="font-mono mb-0">Atividade de Extensão</p>
+                <p className="font-mono mb-0"><a href="https://www.cruzeirodosulvirtual.com.br" target="_blank" className="no-underline font-bold">Cruzeiro do Sul</a></p>
                 <p className="font-mono mb-0">{getProjectVersion()} - {new Date().getFullYear()} 🚀</p>
             </footer>
         </main>
